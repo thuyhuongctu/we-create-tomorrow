@@ -8,3 +8,5 @@ kho mã nguồn phát triển.
 
 Trang chạy tại: xem mục **About** của repo hoặc tab **Deployments** sau khi GitHub Actions
 build xong.
+
+_(Deployed via GitHub Pages.)_
