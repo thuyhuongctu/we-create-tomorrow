@@ -1,6 +1,6 @@
 {
   "title": "We Create Tomorrow: karaoke software for the anthem of Trường Kinh tế, Đại học Cần Thơ",
-  "description": "Web karaoke application for two anthem lyrics of Trường Kinh tế, Đại học Cần Thơ (School of Economics, Can Tho University) — a Vietnamese version (\"Chúng ta cùng đi\") and an English version (\"We Create Tomorrow\"). Displays time-synced lyrics, instant language switching, and a sheet-music view. Built with TypeScript, React, Vite, and Tailwind CSS.",
+  "description": "<p>We Create Tomorrow is a browser-based karaoke application developed to disseminate the anthem of Tr&#432;&#7901;ng Kinh t&#7871;, &#272;&#7841;i h&#7885;c C&#7847;n Th&#417; (School of Economics, Can Tho University) in two language versions &mdash; Vietnamese (&ldquo;Ch&#250;ng ta c&#249;ng &#273;i&rdquo;) and English (&ldquo;We Create Tomorrow&rdquo;). The application renders time-synchronized lyrics during playback, supports instant switching between the two language versions, and provides a supplementary sheet-music view for practice. All processing occurs client-side; the application has no server component and collects no personal data.</p><p>Implemented in TypeScript, React, Vite, and Tailwind CSS. Source code, licensing terms, and author contribution details accompany this deposit and the related copyright-registration dossier at <a href=\"https://github.com/thuyhuongctu/School-of-Economics\">github.com/thuyhuongctu/School-of-Economics</a>.</p>",
   "creators": [
     {
       "name": "Phan, Anh Tú",

@@ -1,15 +1,18 @@
 import { Pause, Play, SkipBack } from "lucide-react";
 import { usePlayer, useSong } from "@/lib/player-store";
+import { uiStrings } from "@/lib/i18n";
 import { cn, formatTime } from "@/lib/utils";
 
 export function PlayerBar({ paper }: { paper: boolean }) {
   const song = useSong();
+  const songId = usePlayer((s) => s.songId);
   const playing = usePlayer((s) => s.playing);
   const currentMs = usePlayer((s) => s.currentMs);
   const play = usePlayer((s) => s.play);
   const pause = usePlayer((s) => s.pause);
   const seek = usePlayer((s) => s.seek);
   const progress = song.durationMs > 0 ? currentMs / song.durationMs : 0;
+  const t = uiStrings(songId);
 
   return (
     <div
@@ -33,7 +36,7 @@ export function PlayerBar({ paper }: { paper: boolean }) {
           aria-valuemin={0}
           aria-valuemax={song.durationMs}
           aria-valuenow={currentMs}
-          aria-label="Tiến độ"
+          aria-label={t.progress}
           tabIndex={0}
         >
           <div
@@ -53,7 +56,7 @@ export function PlayerBar({ paper }: { paper: boolean }) {
               ? "text-ink-muted hover:bg-paper-2 hover:text-ink-fg"
               : "text-fg-muted hover:bg-ink-3 hover:text-fg",
           )}
-          aria-label="Về đầu"
+          aria-label={t.restart}
         >
           <SkipBack className="size-4" />
         </button>
@@ -65,7 +68,7 @@ export function PlayerBar({ paper }: { paper: boolean }) {
             "flex size-12 items-center justify-center rounded-full transition-transform active:scale-95",
             paper ? "bg-ink-fg text-paper" : "bg-fg text-ink",
           )}
-          aria-label={playing ? "Tạm dừng" : "Phát"}
+          aria-label={playing ? t.pause : t.play}
         >
           {playing ? (
             <Pause className="size-5 fill-current" />
