@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you reference this software, please cite it as below."
+title: "We Create Tomorrow: karaoke software for the anthem of Trường Kinh tế, Đại học Cần Thơ"
+type: software
+version: 1.0.0
+date-released: "2026-08-24"
+repository-code: "https://github.com/thuyhuongctu/we-create-tomorrow"
+url: "https://thuyhuongctu.github.io/we-create-tomorrow/"
+license: LicenseRef-All-Rights-Reserved
+authors:
+  - family-names: Phan
+    given-names: "Anh Tú"
+    orcid: "https://orcid.org/0000-0003-0667-3137"
+    affiliation: "Trường Kinh tế, Đại học Cần Thơ"
+  - family-names: Đỗ
+    given-names: "Thùy Hương"
+    orcid: "https://orcid.org/0000-0002-7711-2487"
+    affiliation: "Trường Đại học Sư phạm Kỹ thuật Vĩnh Long"
