@@ -7,10 +7,12 @@ import {
   BrandStampFallback,
   BrandWordmark,
 } from "@/components/brand";
+import { uiStrings } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export function KaraokeStage() {
   const song = useSong();
+  const songId = usePlayer((s) => s.songId);
   const lineIndex = usePlayer((s) => s.lineIndex);
   const wordIndex = usePlayer((s) => s.wordIndex);
   const playing = usePlayer((s) => s.playing);
@@ -18,6 +20,7 @@ export function KaraokeStage() {
   const play = usePlayer((s) => s.play);
   const seekLine = usePlayer((s) => s.seekLine);
   const scroller = useRef<HTMLDivElement>(null);
+  const t = uiStrings(songId);
   const started = playing || currentMs > 80;
   const lines = song.lines;
   const sections = song.sections;
@@ -68,7 +71,7 @@ export function KaraokeStage() {
               className="mt-5 inline-flex h-12 items-center gap-2 rounded-xl bg-fg px-5 font-sans text-base font-medium text-ink transition-opacity hover:opacity-90 active:scale-[0.96]"
             >
               <Play className="size-4 fill-current" />
-              Phát
+              {t.play}
             </button>
           </div>
           <BrandDuo className="relative z-10 order-first mx-auto h-40 w-auto sm:h-48 lg:order-none lg:h-[min(22rem,58vh)] lg:self-end" />
@@ -81,7 +84,7 @@ export function KaraokeStage() {
           <div className="mx-auto flex max-w-3xl flex-col gap-6 sm:gap-8">
             {!vocalOn ? (
               <p className="text-center font-sans text-xs font-medium tracking-[0.2em] text-coral-bright uppercase">
-                Dạo nhạc
+                {t.interlude}
               </p>
             ) : null}
             {lines.map((line, i) => {

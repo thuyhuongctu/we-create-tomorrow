@@ -1,7 +1,8 @@
-import { Music2, AlignLeft } from "lucide-react";
+import { Music2, AlignLeft, Sun, Moon } from "lucide-react";
 import { SONG_LIST, type SongId, type ViewMode } from "@/lib/anthem";
 import { BrandStamp, BrandStampFallback } from "@/components/brand";
 import { usePlayer, useSong } from "@/lib/player-store";
+import { uiStrings } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export function AppHeader({ paper }: { paper: boolean }) {
@@ -9,7 +10,10 @@ export function AppHeader({ paper }: { paper: boolean }) {
   const setMode = usePlayer((s) => s.setMode);
   const songId = usePlayer((s) => s.songId);
   const setSong = usePlayer((s) => s.setSong);
+  const theme = usePlayer((s) => s.theme);
+  const toggleTheme = usePlayer((s) => s.toggleTheme);
   const song = useSong();
+  const t = uiStrings(songId);
 
   return (
     <header
@@ -45,7 +49,7 @@ export function AppHeader({ paper }: { paper: boolean }) {
         <div
           className={cn("flex rounded-lg p-1", paper ? "bg-paper-2" : "bg-ink-3")}
           role="tablist"
-          aria-label="Chọn bài hát"
+          aria-label={t.songTabsLabel}
         >
           {SONG_LIST.map((s) => (
             <button
@@ -70,11 +74,11 @@ export function AppHeader({ paper }: { paper: boolean }) {
         <div
           className={cn("flex rounded-lg p-1", paper ? "bg-paper-2" : "bg-ink-3")}
           role="tablist"
-          aria-label="Chế độ xem"
+          aria-label={t.viewModeLabel}
         >
           <ModeTab
             id="karaoke"
-            label="Lời"
+            label={t.lyricsTab}
             icon={AlignLeft}
             active={mode === "karaoke"}
             paper={paper}
@@ -82,13 +86,27 @@ export function AppHeader({ paper }: { paper: boolean }) {
           />
           <ModeTab
             id="sheet"
-            label="Nốt"
+            label={t.sheetTab}
             icon={Music2}
             active={mode === "sheet"}
             paper={paper}
             onClick={() => setMode("sheet")}
           />
         </div>
+
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label={theme === "dark" ? t.toLightTheme : t.toDarkTheme}
+          className={cn(
+            "flex size-11 shrink-0 items-center justify-center rounded-lg transition-colors",
+            paper
+              ? "bg-paper-2 text-ink-muted hover:text-ink-fg"
+              : "bg-ink-3 text-fg-muted hover:text-fg",
+          )}
+        >
+          {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+        </button>
       </div>
     </header>
   );

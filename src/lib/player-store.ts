@@ -9,15 +9,24 @@ import {
 } from "@/lib/anthem";
 import * as engine from "@/lib/audio-engine";
 
+type Theme = "dark" | "light";
+
+function loadTheme(): Theme {
+  if (typeof window === "undefined") return "dark";
+  return window.localStorage.getItem("wct-theme") === "light" ? "light" : "dark";
+}
+
 type PlayerState = {
   songId: SongId;
   mode: ViewMode;
+  theme: Theme;
   playing: boolean;
   currentMs: number;
   lineIndex: number;
   wordIndex: number;
   setSong: (id: SongId) => void;
   setMode: (mode: ViewMode) => void;
+  toggleTheme: () => void;
   play: () => Promise<void>;
   pause: () => void;
   seek: (ms: number) => void;
@@ -40,6 +49,7 @@ function startClock(get: () => PlayerState) {
 export const usePlayer = create<PlayerState>((set, get) => ({
   songId: "en",
   mode: "karaoke",
+  theme: loadTheme(),
   playing: false,
   currentMs: 0,
   lineIndex: 0,
@@ -59,6 +69,13 @@ export const usePlayer = create<PlayerState>((set, get) => ({
   },
 
   setMode: (mode) => set({ mode }),
+
+  toggleTheme: () =>
+    set((s) => {
+      const theme: Theme = s.theme === "dark" ? "light" : "dark";
+      window.localStorage.setItem("wct-theme", theme);
+      return { theme };
+    }),
 
   play: async () => {
     const song = SONGS[get().songId];
