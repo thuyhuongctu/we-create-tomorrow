@@ -75,10 +75,37 @@
     );
 }
 
+@keyframes note-float {
+  0% {
+    transform: translateY(0) rotate(-4deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(-4deg);
+    opacity: 0;
+  }
+}
+
+.note-float {
+  animation-name: note-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lyric-stage,
   .staff-playhead,
-  .staff-note {
+  .staff-note,
+  .note-float {
     transition: none !important;
     animation: none !important;
   }

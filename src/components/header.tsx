@@ -1,6 +1,7 @@
 import { Music2, AlignLeft, Sun, Moon } from "lucide-react";
 import { SONG_LIST, type SongId, type ViewMode } from "@/lib/anthem";
 import { BrandStamp, BrandStampFallback } from "@/components/brand";
+import { VietnamClock } from "@/components/vietnam-clock";
 import { usePlayer, useSong } from "@/lib/player-store";
 import { uiStrings } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -43,6 +44,7 @@ export function AppHeader({ paper }: { paper: boolean }) {
             {song.subtitle}
           </p>
         </div>
+        <VietnamClock paper={paper} label={t.vietnamTime} className="hidden sm:flex" />
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
