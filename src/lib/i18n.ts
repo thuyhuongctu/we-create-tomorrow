@@ -14,6 +14,7 @@ export const UI_STRINGS = {
     sectionsLabel: "Song sections",
     toLightTheme: "Switch to light theme",
     toDarkTheme: "Switch to dark theme",
+    vietnamTime: "Current time in Vietnam (GMT+7)",
   },
   vi: {
     play: "Phát",
@@ -28,6 +29,7 @@ export const UI_STRINGS = {
     sectionsLabel: "Phần bài hát",
     toLightTheme: "Chuyển sang giao diện sáng",
     toDarkTheme: "Chuyển sang giao diện tối",
+    vietnamTime: "Giờ Việt Nam hiện tại (GMT+7)",
   },
 } as const;
 

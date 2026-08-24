@@ -7,6 +7,7 @@ import {
   BrandStampFallback,
   BrandWordmark,
 } from "@/components/brand";
+import { NotesFloat } from "@/components/notes-float";
 import { uiStrings } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -43,10 +44,10 @@ export function KaraokeStage() {
       {!started ? (
         <div className="hero-glow relative flex flex-1 flex-col justify-end gap-4 overflow-hidden px-4 pb-6 pt-4 sm:justify-center sm:gap-0 sm:pb-8 sm:pt-6 lg:flex-row lg:items-end lg:justify-center lg:gap-8 lg:px-10">
           <img
-            src="brand/scenery.jpg"
+            src="brand/vietnam-map.svg"
             alt=""
             aria-hidden
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.16] mix-blend-luminosity"
+            className="pointer-events-none absolute top-[2%] right-[-4%] h-[78%] w-auto max-w-none opacity-[0.26] sm:right-[6%] lg:right-[12%]"
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
@@ -74,7 +75,10 @@ export function KaraokeStage() {
               {t.play}
             </button>
           </div>
-          <BrandDuo className="relative z-10 order-first mx-auto h-40 w-auto sm:h-48 lg:order-none lg:h-[min(22rem,58vh)] lg:self-end" />
+          <div className="relative z-10 order-first mx-auto lg:order-none lg:self-end">
+            <NotesFloat />
+            <BrandDuo className="h-40 w-auto sm:h-48 lg:h-[min(22rem,58vh)]" />
+          </div>
         </div>
       ) : (
         <div
