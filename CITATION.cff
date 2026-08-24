@@ -4,8 +4,13 @@ title: "We Create Tomorrow: karaoke software for the anthem of Trường Kinh t�
 type: software
 version: 1.0.0
 date-released: "2026-08-24"
+doi: "10.5281/zenodo.22080061"
 repository-code: "https://github.com/thuyhuongctu/we-create-tomorrow"
 url: "https://thuyhuongctu.github.io/we-create-tomorrow/"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22080061"
+    description: "Zenodo archive of version v.1.0 (Restricted Access)"
 license: LicenseRef-All-Rights-Reserved
 authors:
   - family-names: Phan
