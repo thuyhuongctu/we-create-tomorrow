@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #100c0b;
+  --color-ink-2: #181210;
+  --color-ink-3: #261c18;
+  --color-paper: #f6eee6;
+  --color-paper-2: #eadfd4;
+  --color-fg: #f5ece6;
+  --color-fg-muted: #b7a396;
+  --color-fg-subtle: #7d6c62;
+  --color-ink-fg: #2a201c;
+  --color-ink-muted: #6e5e54;
+  --color-coral: #d47868;
+  --color-coral-bright: #f0b5a8;
+  --color-edge: color-mix(in oklab, #f5ece6 12%, transparent);
+  --color-edge-paper: color-mix(in oklab, #2a201c 14%, transparent);
+  --color-staff: #3a2c28;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    min-height: 100%;
+    min-height: 100dvh;
+    background: var(--color-ink);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 78% 100%,
+      color-mix(in oklab, var(--color-coral) 28%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 18% 0%,
+      color-mix(in oklab, var(--color-coral-bright) 10%, transparent),
+      transparent 65%
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lyric-stage,
+  .staff-playhead,
+  .staff-note {
+    transition: none !important;
+    animation: none !important;
+  }
+}
