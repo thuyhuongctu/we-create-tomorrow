@@ -69,6 +69,12 @@ npm run build     # build production vào dist/
 Triển khai tự động lên GitHub Pages qua GitHub Actions mỗi khi có push vào `main`
 (xem [`.github/workflows/pages.yml`](.github/workflows/pages.yml)).
 
+## Trích dẫn
+
+Lưu trữ độc lập trên Zenodo (CERN), phiên bản v.1.0, chế độ Restricted Access:
+[DOI 10.5281/zenodo.22080061](https://doi.org/10.5281/zenodo.22080061). Xem thêm
+[`CITATION.cff`](CITATION.cff).
+
 ## Bản quyền
 
 © 2026 Phan Anh Tú, Đỗ Thùy Hương. Bảo lưu mọi quyền — xem [LICENSE](LICENSE).
