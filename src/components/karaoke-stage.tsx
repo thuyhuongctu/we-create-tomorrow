@@ -44,10 +44,10 @@ export function KaraokeStage() {
       {!started ? (
         <div className="hero-glow relative flex flex-1 flex-col justify-end gap-4 overflow-hidden px-4 pb-6 pt-4 sm:justify-center sm:gap-0 sm:pb-8 sm:pt-6 lg:flex-row lg:items-end lg:justify-center lg:gap-8 lg:px-10">
           <img
-            src="brand/vietnam-map.svg"
+            src="brand/scenery.jpg"
             alt=""
             aria-hidden
-            className="pointer-events-none absolute top-[2%] right-[-4%] h-[78%] w-auto max-w-none opacity-[0.26] sm:right-[6%] lg:right-[12%]"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.16] mix-blend-luminosity"
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
