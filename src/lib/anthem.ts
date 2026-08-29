@@ -80,7 +80,7 @@ const EN_RAW: RawSection[] = [
     id: "verse1",
     labelVi: "Khổ 1",
     labelEn: "Verse 1",
-    startMs: 38000,
+    startMs: 17000, // calibrated: user confirmed "Numbers become stories" sung at 0:35
     lines: [
       "Under the morning light of the lecture hall",
       "We learn to see beyond what we can see",
