@@ -15,6 +15,8 @@ export const UI_STRINGS = {
     toLightTheme: "Switch to light theme",
     toDarkTheme: "Switch to dark theme",
     vietnamTime: "Current time in Vietnam (GMT+7)",
+    trailer: "Trailer",
+    closeTrailer: "Close trailer",
   },
   vi: {
     play: "Phát",
@@ -30,6 +32,8 @@ export const UI_STRINGS = {
     toLightTheme: "Chuyển sang giao diện sáng",
     toDarkTheme: "Chuyển sang giao diện tối",
     vietnamTime: "Giờ Việt Nam hiện tại (GMT+7)",
+    trailer: "Giới thiệu",
+    closeTrailer: "Đóng video giới thiệu",
   },
 } as const;
 

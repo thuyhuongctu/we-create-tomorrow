@@ -15,6 +15,12 @@ user's browser; the application has no server component and collects no personal
 
 **Live demo:** <https://thuyhuongctu.github.io/we-create-tomorrow/>
 
+### Trailer
+
+https://github.com/thuyhuongctu/we-create-tomorrow/raw/main/public/trailer.mp4
+
+*A short promotional clip generated with an AI video tool (xAI Grok); also playable in-app via the "Trailer" button in the header.*
+
 ## Authors and contributions
 
 | Author | Affiliation | ORCID | Contribution |
@@ -57,7 +63,8 @@ src/
     sheet-view.tsx            Sheet-music view
     staff.tsx                 Staff (musical stave) rendering
     brand.tsx                 Brand assets
-    footer.tsx                Footer: copyright, source link, and DOI
+    footer.tsx                Footer: copyright and DOI
+    trailer-modal.tsx         Trailer video modal, opened from the header
   lib/
     anthem.ts                 Time-synchronized lyric data, both languages
     audio-engine.ts            Audio playback control
@@ -69,6 +76,7 @@ public/
   brand/                    Brand assets (logo, character illustration, background)
   audio/                    Two audio recordings (Vietnamese, English)
   favicon.svg, icon-*.png   App icons
+  trailer.mp4               Short promotional trailer clip
 ```
 
 ## Deployment and reproduction

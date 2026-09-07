@@ -1,7 +1,9 @@
-import { Music2, AlignLeft, Sun, Moon } from "lucide-react";
+import { useState } from "react";
+import { Music2, AlignLeft, Sun, Moon, Clapperboard } from "lucide-react";
 import { SONG_LIST, type SongId, type ViewMode } from "@/lib/anthem";
 import { BrandStamp, BrandStampFallback } from "@/components/brand";
 import { VietnamClock } from "@/components/vietnam-clock";
+import { TrailerModal } from "@/components/trailer-modal";
 import { usePlayer, useSong } from "@/lib/player-store";
 import { uiStrings } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -15,6 +17,7 @@ export function AppHeader({ paper }: { paper: boolean }) {
   const toggleTheme = usePlayer((s) => s.toggleTheme);
   const song = useSong();
   const t = uiStrings(songId);
+  const [trailerOpen, setTrailerOpen] = useState(false);
 
   return (
     <header
@@ -98,6 +101,20 @@ export function AppHeader({ paper }: { paper: boolean }) {
 
         <button
           type="button"
+          onClick={() => setTrailerOpen(true)}
+          className={cn(
+            "flex h-11 items-center gap-1.5 rounded-lg px-3 font-sans text-sm font-medium transition-colors",
+            paper
+              ? "bg-paper-2 text-ink-muted hover:text-ink-fg"
+              : "bg-ink-3 text-fg-muted hover:text-fg",
+          )}
+        >
+          <Clapperboard className="size-4" />
+          {t.trailer}
+        </button>
+
+        <button
+          type="button"
           onClick={toggleTheme}
           aria-label={theme === "dark" ? t.toLightTheme : t.toDarkTheme}
           className={cn(
@@ -110,6 +127,12 @@ export function AppHeader({ paper }: { paper: boolean }) {
           {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
         </button>
       </div>
+
+      <TrailerModal
+        open={trailerOpen}
+        onClose={() => setTrailerOpen(false)}
+        closeLabel={t.closeTrailer}
+      />
     </header>
   );
 }
