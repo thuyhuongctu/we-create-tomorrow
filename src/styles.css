@@ -103,6 +103,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .lyric-stage,
+  .lyric-line,
   .staff-playhead,
   .staff-note,
   .note-float {

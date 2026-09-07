@@ -93,13 +93,21 @@ export function KaraokeStage() {
             ) : null}
             {lines.map((line, i) => {
               const dist = i - lineIndex;
+              const absDist = Math.abs(dist);
               const active = i === lineIndex && vocalOn;
               const past = i < lineIndex;
               const sec = sections.find((s) => s.id === line.sectionId);
               const showLabel =
                 i === 0 || lines[i - 1]?.sectionId !== line.sectionId;
+              const scale = active ? 1 : absDist === 1 ? 0.97 : absDist === 2 ? 0.94 : 0.9;
+              const fade = active ? 1 : absDist === 1 ? 0.85 : absDist === 2 ? 0.6 : 0.4;
               return (
-                <div key={line.id} data-line={i} className="scroll-mt-24">
+                <div
+                  key={line.id}
+                  data-line={i}
+                  className="lyric-line scroll-mt-24 origin-left transition-[transform,opacity] duration-300 ease-out"
+                  style={{ transform: `scale(${scale})`, opacity: fade }}
+                >
                   {line.cue ? (
                     <p className="mb-1 font-sans text-xs italic text-fg-muted">{line.cue}</p>
                   ) : null}
