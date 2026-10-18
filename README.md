@@ -19,8 +19,6 @@ user's browser; the application has no server component and collects no personal
 
 https://github.com/thuyhuongctu/we-create-tomorrow/raw/main/public/trailer.mp4
 
-*A short promotional clip generated with an AI video tool (xAI Grok); also playable in-app via the "Trailer" button in the header.*
-
 ## Authors and contributions
 
 | Author | Affiliation | ORCID | Contribution |
