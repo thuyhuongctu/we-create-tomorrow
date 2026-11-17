@@ -6,7 +6,7 @@ version: 1.0.0
 date-released: "2026-08-24"
 doi: "10.5281/zenodo.22080061"
 repository-code: "https://github.com/thuyhuongctu/we-create-tomorrow"
-url: "https://thuyhuongctu.github.io/we-create-tomorrow/"
+url: "https://wct.jemappellehuong.com/"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22080061"
