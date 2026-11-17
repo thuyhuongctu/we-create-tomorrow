@@ -13,7 +13,7 @@ time-synchronized lyrics (karaoke), supports instant language switching, and pro
 supplementary sheet-music view for practice. All processing happens client-side in the
 user's browser; the application has no server component and collects no personal data.
 
-**Live demo:** <https://thuyhuongctu.github.io/we-create-tomorrow/>
+**Live demo:** <https://wct.jemappellehuong.com/>
 
 ### Trailer
 
